@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/**
+ * Domyślne elementy strony
+ */
+@-webkit-keyframes animation-blink {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animation-blink {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animation-blink {
+  -webkit-animation: animation-blink 0.5s infinite alternate;
+          animation: animation-blink 0.5s infinite alternate;
+}
+
+html {
+  font-size: 16px;
+}
+
+.error404__wrap {
+  min-height: 400px;
+  padding: 10% 0;
+  text-align: center;
+}
+
+.error404__content {
+  position: relative;
+}
+
+.error404__code {
+  line-height: 1;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #0073b1;
+}
+
+.pagination__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination__list li:before {
+  display: none !important;
+}
+
+.pagination__item {
+  margin: 0 0.3rem;
+  border: 2px solid #0073b1;
+  color: #0073b1;
+  line-height: 0.7;
+  border-radius: 0.2rem;
+  font-weight: 700;
+}
+
+.pagination__item a, .pagination__item span {
+  color: inherit;
+  padding: 0.3rem;
+  display: block;
+  font-weight: inherit;
+  text-decoration: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.pagination__item {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.pagination__item:hover, .pagination__item:focus {
+  color: #f7c750;
+  border-color: #f7c750;
+}
+
+.pagination__item--current, .pagination__item--current:hover, .pagination__item--current:focus {
+  color: #fff;
+  background: #0073b1;
+  border-color: #0073b1;
+}
+
+.pagination__arrow {
+  width: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+.pagination__arrow svg * {
+  fill: #0073b1;
+}
+
+.pagination__arrow a {
+  display: block;
+}
+
+.pagination__arrow:hover svg *, .pagination__arrow:focus svg * {
+  fill: #0073b1;
+}
+
+.nav {
+  display: none;
+}

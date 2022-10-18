@@ -1,0 +1,23 @@
+{
+    "name": "vibeon",
+    "type": "wp-theme",
+    "authors": [
+        {
+            "name": "Aleksander Cieśla",
+            "email": "aleksander.ciesla@grupataka.pl"
+        }
+    ],
+    "description": "",
+    "require": {
+        "timber/timber": "^1.8",
+        "phpseclib/phpseclib": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "teik\\Theme\\": ["src/"]
+        },
+        "files": [
+            "includes/load.php"
+        ]
+    }
+}

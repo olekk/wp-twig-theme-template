@@ -1,0 +1,65 @@
+<nav id="navigation" class="nav nav--menu js-main-nav">
+  <button type="button" class="nav__toggle nav__toggle--open js-menu-trigger" aria-label="Menu" data-target=".js-menu" data-action="open">
+    {{ teik_svg('icons/menu.svg') }}
+  </button>
+  <div class="nav__wrap js-menu">
+    <div class="nav__close">
+      <button type="button" class="nav__toggle nav__toggle--close js-menu-trigger" aria-label="Menu" data-target=".js-menu" data-action="close">
+        {{ teik_svg('icons/cancel.svg') }}
+      </button>
+    </div>
+    <ul class="nav__menu nav__menu--desktop js-nav" data-name="menu">
+      {% for key,item in menus.main.items %}
+        <li class="nav__item nav__item--level-{{ item.level }} {{ item.children ? 'nav__item--has-children js-nav-top-item js-nav-item' : '' }} {{ item.class }}" aria-controls="nav-submenu-{{ key }}-{{ item.ID }}">
+          <a href="{{ item.link }}" id="nav-submenu-label-{{ key }}-{{ item.ID }}" class="nav__link js-nav-link" {{ item.target ? 'target="' ~ item.target ~ '"' : '' }} aria-controls="nav-submenu-{{ key }}-{{ item.ID }}" tabindex="0">
+            {{ item.title }}
+            {% if item.children %}
+              <span class="nav__link-dropdown"></span>
+            {% endif %}
+          </a>
+          {% if item.children %}
+            <div class="nav__submenu-wrap js-nav-panel" id="nav-submenu-{{ key }}-{{ item.ID }}" aria-expanded="false" aria-labelledby="nav-submenu-label-{{ key }}-{{ item.ID }}">
+              {% if menu_depth(item) > 2 %}
+                {% include ['components/nav-submenu-level-' ~ item.children[0].level ~ '.twig','components/nav-submenu.twig'] with {items: item.children} %}
+              {% else %}
+                <ul class="nav__submenu nav__submenu--level-2 js-submenu-group" role="tablist">
+                  {% for key,item in item.children %}
+                    <li class="nav__item nav__item--shallow nav__item--submenu nav__item--level-2">
+                      <div class="nav__item-wrap">
+                        <figure class="nav__item-icon">
+                          {{ teik_icon(TimberImage(item.meta('icon'))) }}
+                        </figure>
+                        <div class="nav__item-body nav__item-body--level-2">
+                          <a href="{{ item.link }}" class="nav__submenu-link">
+                            {{ item.title }}
+                          </a>
+                          {% if item.children %}
+                            {% include 'components/nav-submenu.twig' with {items: item.children} %}
+                          {% endif %}
+                        </div>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <ul class="nav__menu nav__menu--mobile js-scrollbar js-mobile-menu" data-name="menu">
+      {% for key,item in menus.main.items %}
+        <li class="nav__item nav__item--level-{{ item.level }} {{ item.children ? 'nav__item--has-children' : '' }} {{ item.class }}">
+          <a href="{{ item.link }}" class="nav__link" {{ item.target ? 'target="' ~ item.target ~ '"' : '' }}>
+            {{ item.title }}
+          </a>
+
+          {% if item.children %}
+            {% include ['components/nav-submenu.twig'] with {items: item.children, mobile: true} %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

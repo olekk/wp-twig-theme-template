@@ -1,0 +1,15 @@
+/**
+ * Domyślne elementy strony
+ */
+
+@import "theme/colors";
+@import "theme/fonts";
+@import "theme/breakpoints";
+@import "theme/animations";
+
+@import "core/mixins";
+
+@import "theme/elements";
+@import "components/error404";
+@import "components/pagination";
+@import "components/navigation";

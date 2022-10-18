@@ -1,0 +1,29 @@
+$color-primary: #0073b1;
+$primary: $color-primary;
+$color-primary-dark: #205199;
+$color-secondary: #f7c750;
+$secondary: $color-secondary;
+$color-accent: #e9edf4;
+
+
+$color-tertiary: #3d4956;
+
+$color-gradient-dark: #124b98;
+$color-gradient-light: $color-primary;
+
+$color-gradient-highcontrast: lighten(#000, 30%);
+
+$color-alt: #06846b;
+
+$color-success: #39b54a;
+$color-success-dark: darken($color-success, 10%);
+
+$color-error: #d50000;
+$color-error-dark: darken($color-error, 10%);
+
+
+$text-color: $color-tertiary;
+
+
+$color-price-distinct: #ff3737;
+$color-price-distinct-alt: $color-alt;

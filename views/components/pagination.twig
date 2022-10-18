@@ -1,0 +1,45 @@
+{% if pagination.total > 1 %}
+  <nav class="pagination" aria-label="Paginacja">
+    <ul class="pagination__list">
+      {% if pagination.prev %}
+        <li class="pagination__arrow pagination__arrow--first">
+          <a href="{{ fn('get_pagenum_link', 1) }}" aria-label="Przejdź do pierwszej strony">
+            {{ teik_svg('icons/arrows/double-arrow-left.svg') }}
+          </a>
+        </li>
+        <li class="pagination__arrow pagination__arrow--prev">
+          <a href="{{ pagination.prev.link }}" aria-label="Przejdź do poprzedniej strony">
+            {{ teik_svg('icons/arrows/arrow-left.svg') }}
+          </a>
+        </li>
+      {% endif %}
+      {% for key,item in pagination.pages %}
+        <li class="pagination__item {{ item.current ? 'pagination__item--current' : '' }}">
+          {% if item.link %}
+            <a href="{{ item.link }}" aria-label="Strona {{ item.title }}">
+          {% else %}
+            <span {{ item.current ? 'aria-label="Obecna strona, Strona ' ~ item.title ~ '"' : '' }}>
+          {% endif %}
+            {{ item.title }}
+          {% if item.link %}
+            </a>
+          {% else %}
+            </span>
+          {% endif %}
+        </li>
+      {% endfor %}
+      {% if pagination.next %}
+        <li class="pagination__arrow pagination__arrow--next">
+          <a href="{{ pagination.next.link }}" aria-label="Przejdź do następnej strony">
+            {{ teik_svg('icons/arrows/arrow-right.svg') }}
+          </a>
+        </li>
+        <li class="pagination__arrow pagination__arrow--last">
+          <a href="{{ fn('get_pagenum_link',pagination.total) }}" aria-label="Przejdź do ostatniej strony">
+            {{ teik_svg('icons/arrows/double-arrow-right.svg') }}
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

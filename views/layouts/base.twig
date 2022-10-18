@@ -1,0 +1,16 @@
+<div id="maincontent" class="js-page">
+  {% include 'components/header.twig' %}
+  {% block underHeader %}
+  {% endblock %}
+  {% block body %}
+    <main id="pagecontent" class="pagewrap">
+      {% block page %}
+
+      {% endblock page %}
+    </main>
+  {% endblock body %}
+  {% block beforeFooter %}
+
+  {% endblock beforeFooter %}
+  {% include 'components/footer.twig' %}
+</div>

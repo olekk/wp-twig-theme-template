@@ -1,0 +1,31 @@
+<div class="control-box">
+  <fieldset>
+    <table class="form-table">
+    <tbody>
+      <tr>
+        <th scope="row">{{ __('Field type', 'contact-form-7') }}</th>
+        <td>
+          <fieldset>
+            <legend class="screen-reader-text">{{ __('Field type', 'contact-form-7') }}</legend>
+            <label><input type="checkbox" name="required" /> {{ __( 'Required field', 'contact-form-7' ) }}</label>
+          </fieldset>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label for="{{ content ~ '-name' }}">{{ __( 'Name', 'contact-form-7' ) }}</label>
+        </th>
+        <td>
+          <input type="text" name="name" class="tg-name oneline" id="{{ content ~ '-name' }}" />
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </fieldset>
+</div>
+<div class="insert-box">
+  <input type="text" name="{{ id }}" class="tag code" readonly="readonly" onfocus="this.select()" />
+  <div class="submitbox">
+    <input type="button" class="button button-primary insert-tag" value="{{ __( 'Insert Tag', 'contact-form-7' ) }}" />
+  </div>
+</div>

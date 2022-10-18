@@ -1,0 +1,19 @@
+{% extends "layouts/base.twig" %}
+{% block underHeader %}
+
+{% endblock %}
+
+{% block page %}
+  <section class="blog__list">
+    {% for post in posts %}
+    {% endfor %}
+  </section>
+  {% include 'components/pagination.twig' with {pagination: posts.pagination} %}
+{% endblock page %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block beforeFooter %}
+
+{% endblock beforeFooter %}

@@ -1,0 +1,21 @@
+{% extends "layouts/base.twig" %}
+  {% block body %}
+  <section class="error404__body">
+    <div class="container container--narrow">
+      <div class="error404__wrap">
+        <div class="error404__content">
+          <div class="error404__code">404</div>
+          <header class="heading heading--404">
+            <h1>Strony <span class="highlight">nie znaleziono</span></h1>
+            <div class="heading__subtitle">
+              Strona, której szukasz została usunięta lub przeniesiona. Przejdź na stronę główną lub skorzystaj z wyszukiwarki.
+            </div>
+          </header>
+          <aside class="error404__actions">
+            <a href="{{site.url}}" class="button button--primary">Wróć do strony głównej</a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock body %}

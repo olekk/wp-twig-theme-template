@@ -1,0 +1,177 @@
+html {
+  font-size: 16px;
+}
+// body {
+//   color: $color-tertiary;
+//   &[data-contrast="high"] {
+//     color: #fff;
+//   }
+// }
+// ::selection {
+//   background: lighten($color-primary, 20%);
+//   color: #fff;
+// }
+// %sr-only,
+// .sr-only {
+//   position: absolute;
+//   width: 1px !important;
+//   height: 1px !important;
+//   padding: 0 !important;
+//   overflow: hidden;
+//   clip: rect(0, 0, 0, 0);
+//   white-space: nowrap;
+//   border: 0;
+// }
+// %list-unstyled,
+// .list-unstyled {
+//   list-style: none;
+//   margin:0;
+//   padding:0;
+//   li {
+//     &:before {
+//       display: none !important;
+//     }
+//   }
+// }
+// a {
+//   transition: all 0.3s;
+//   color: $color-primary-dark;
+//   font-weight: 700;
+//   &:hover,
+//   &:focus {
+//     color: $color-secondary;
+//   }
+//   .nested-rows &:not(.button) {
+//     color: $color-secondary;
+//   }
+//   @include highContrast {
+//     color: $color-secondary;
+//   }
+// }
+// p {
+//   margin-bottom: 1.7em;
+// }
+// svg {
+//   width: 100%;
+//   height: auto;
+//   display: inline-block;
+// }
+// img {
+//   max-width: 100%;
+//   height: auto;
+//   display: inline-block;
+// }
+// button {
+//   cursor: pointer;
+//   [disabled],
+//   [disabled="true"] {
+//     cursor: not-allowed;
+//   }
+// }
+
+// ul,ol, dl {
+//   padding-left: 20px;
+// }
+// .pagewrap {
+//   ul {
+//     li {
+//       list-style: none;
+//       position: relative;
+//       margin-bottom: 0.5rem;
+//       &:before {
+//         content: '';
+//         display: inline-block;
+//         background: $color-primary;
+//         width: 0.5em;
+//         height: 0.5em;
+//         border-radius: 50%;
+//         position: absolute;
+//         left: -15px;
+//         top: 0.4em;
+//       }
+//     }
+//   }
+//   .nested-rows ul li:before {
+//     background: #fff;
+//   }
+//   @include highContrast {
+//     ul li:before {
+//       background: $color-secondary;
+//     }
+//   }
+// }
+
+// .container {
+//   max-width: 1470px;
+//   @include min-width('xl') {
+//     &--narrow {
+//       max-width: 1000px;
+//     }
+//     &__shrink {
+//       max-width: 75%;
+//       margin: 0 auto;
+//     }
+//   }
+// }
+// .row {
+//   &--wrapper {
+//     margin-left: 0;
+//     margin-right: 0;
+//     width: 100%;
+//   }
+// }
+// .iframe-wrap {
+//   width: 100%;
+//   padding-bottom: 56.5%;
+//   position: relative;
+//   iframe {
+//     position: absolute;
+//     top:0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
+
+// .hide-desktop {
+//   @include min-width('xl') {
+//     display: none !important;
+//   }
+// }
+
+// .highlight {
+//   position: relative;
+//   display: inline-block;
+//   &:after {
+//     content: '';
+//     display: block;
+//     width: 100%;
+//     height: 35%;
+//     position: absolute;
+//     z-index: -1;
+//     background: $color-primary;
+//     bottom:0;
+//   }
+// }
+// body {
+//   @include clearfix();
+// }
+
+
+// %form-field {
+//   border: 2px solid $color-secondary;
+//   position: relative;
+//   overflow: hidden;
+//   &__input {
+//     width: 100%;
+//     font-size: 1.2rem;
+//     padding: 0.5rem 0.5rem 0.5rem 3rem;
+//     background: transparent;
+//     border: none;
+//   }
+// }
+
+
+// .js-template {
+//   display: none;
+// }

@@ -1,0 +1,16 @@
+.error404 {
+  &__wrap {
+    min-height: 400px;
+    padding: 10% 0;
+    text-align: center;
+  }
+  &__content {
+    position: relative;
+  }
+  &__code {
+    line-height: 1;
+    font-size: 5rem;
+    font-weight: 700;
+    color: $primary;
+  }
+}

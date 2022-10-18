@@ -1,0 +1,13 @@
+<span class="wpcf7-form-control-wrap {{ tag.name }}">
+  {% for key, consent in consents %}
+  <div class="form__consent">
+    <span class="wpcf7-acceptance required">
+      <label class="form__checkbox">
+        <input {{ atts }} value="{{ key }}">
+        <span class="form__checkbox-box">{{ teik_svg('icons/tick.svg') }}</span>
+        {{ consent.content }}
+      </label>
+    </span>
+  </div>
+  {% endfor %}
+</span>

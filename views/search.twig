@@ -1,0 +1,21 @@
+{% extends "layouts/base.twig" %}
+{% block underHeader %}
+  <div class="container">
+    <div class="page-heading">
+      <header class="heading heading--main heading--separated heading--centered">
+        <h1> {{ title }} </h1>
+        <p class="heading__subtitle">Wyszukiwana fraza: <b>{{search_query}}</b></p>
+      </header>
+    </div>
+  </div>
+{% endblock %}
+{% block page %}
+  <div class="container container--narrow">
+    <section class="search__items">
+      {% for post in posts %}
+
+      {% endfor %}
+    </section>
+    {% include 'components/pagination.twig' with {pagination: posts.pagination(5)} %}
+  </div>
+{% endblock page %}

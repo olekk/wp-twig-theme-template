@@ -1,0 +1,53 @@
+.pagination {
+  &__list {
+    @include list-unstyled;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__item {
+    margin: 0 0.3rem;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    line-height: 0.7;
+    border-radius: 0.2rem;
+    font-weight: 700;
+    a,span {
+      color: inherit;
+      padding: 0.3rem;
+      display: block;
+      font-weight: inherit;
+      text-decoration: none;
+      transition: none;
+    }
+    & {
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:focus {
+      color: $color-secondary;
+      border-color: $color-secondary;
+    }
+    &--current {
+      &,
+      &:hover,
+      &:focus {
+        color: #fff;
+        background: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+  }
+  &__arrow {
+    width: 1.5rem;
+    margin: 0 0.5rem;
+    @include colorSVG($color-primary);
+    a {
+      display: block
+    }
+    &:hover,
+    &:focus {
+      @include colorSVG($color-primary);
+    }
+  }
+}
