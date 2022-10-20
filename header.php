@@ -33,7 +33,8 @@
   <meta property="og:title" content="<?php wp_title();?>">
   <meta property="og:description" content="{{ seo.description }}">
   <meta property="og:url" content="{{ url }}"> -->
-
+  
+<!-- https://www.favicon-generator.org/ -->
   <link rel="apple-touch-icon" sizes="57x57" href="<?php echo teik_asset('icons/apple-icon-57x57.png');?>">
   <link rel="apple-touch-icon" sizes="60x60" href="<?php echo teik_asset('icons/apple-icon-60x60.png');?>">
   <link rel="apple-touch-icon" sizes="72x72" href="<?php echo teik_asset('icons/apple-icon-72x72.png');?>">

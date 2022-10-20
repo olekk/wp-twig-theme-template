@@ -1,10 +1,10 @@
 {
-    "name": "vibeon",
+    "name": "olekk/wp-theme",
     "type": "wp-theme",
     "authors": [
         {
             "name": "Aleksander Cieśla",
-            "email": "aleksander.ciesla@grupataka.pl"
+            "email": "aleksander.ciesla@protonmail.com"
         }
     ],
     "description": "",
@@ -19,5 +19,10 @@
         "files": [
             "includes/load.php"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }

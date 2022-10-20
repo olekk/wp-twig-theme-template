@@ -18,7 +18,6 @@
     opacity: 1;
   }
 }
-
 .animation-blink {
   -webkit-animation: animation-blink 0.5s infinite alternate;
           animation: animation-blink 0.5s infinite alternate;
@@ -28,16 +27,18 @@ html {
   font-size: 16px;
 }
 
+body {
+  margin: 0;
+}
+
 .error404__wrap {
   min-height: 400px;
   padding: 10% 0;
   text-align: center;
 }
-
 .error404__content {
   position: relative;
 }
-
 .error404__code {
   line-height: 1;
   font-size: 5rem;
@@ -59,11 +60,9 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .pagination__list li:before {
   display: none !important;
 }
-
 .pagination__item {
   margin: 0 0.3rem;
   border: 2px solid #0073b1;
@@ -72,7 +71,6 @@ html {
   border-radius: 0.2rem;
   font-weight: 700;
 }
-
 .pagination__item a, .pagination__item span {
   color: inherit;
   padding: 0.3rem;
@@ -83,41 +81,63 @@ html {
   -o-transition: none;
   transition: none;
 }
-
 .pagination__item {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .pagination__item:hover, .pagination__item:focus {
   color: #f7c750;
   border-color: #f7c750;
 }
-
 .pagination__item--current, .pagination__item--current:hover, .pagination__item--current:focus {
   color: #fff;
   background: #0073b1;
   border-color: #0073b1;
 }
-
 .pagination__arrow {
   width: 1.5rem;
   margin: 0 0.5rem;
 }
-
 .pagination__arrow svg * {
   fill: #0073b1;
 }
-
 .pagination__arrow a {
   display: block;
 }
-
 .pagination__arrow:hover svg *, .pagination__arrow:focus svg * {
   fill: #0073b1;
 }
 
 .nav {
   display: none;
+}
+
+.fullSlider {
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  position: relative;
+}
+.fullSlider .iframe-container {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  /* Keep it the right aspect-ratio */
+  aspect-ratio: 16/9;
+  /* No clicking/hover effects */
+  pointer-events: none;
+}
+.fullSlider .iframe-container iframe {
+  /* Extend it beyond the viewport... */
+  max-width: 300%;
+  width: 300%;
+  height: 100%;
+  /* ...and bring it back again */
+  margin-left: -100%;
 }

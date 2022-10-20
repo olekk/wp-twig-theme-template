@@ -1,14 +1,5 @@
+  {# menus USE EXAMPLE #}
 <nav id="navigation" class="nav nav--menu js-main-nav">
-  <button type="button" class="nav__toggle nav__toggle--open js-menu-trigger" aria-label="Menu" data-target=".js-menu" data-action="open">
-    {{ teik_svg('icons/menu.svg') }}
-  </button>
-  <div class="nav__wrap js-menu">
-    <div class="nav__close">
-      <button type="button" class="nav__toggle nav__toggle--close js-menu-trigger" aria-label="Menu" data-target=".js-menu" data-action="close">
-        {{ teik_svg('icons/cancel.svg') }}
-      </button>
-    </div>
-    <ul class="nav__menu nav__menu--desktop js-nav" data-name="menu">
       {% for key,item in menus.main.items %}
         <li class="nav__item nav__item--level-{{ item.level }} {{ item.children ? 'nav__item--has-children js-nav-top-item js-nav-item' : '' }} {{ item.class }}" aria-controls="nav-submenu-{{ key }}-{{ item.ID }}">
           <a href="{{ item.link }}" id="nav-submenu-label-{{ key }}-{{ item.ID }}" class="nav__link js-nav-link" {{ item.target ? 'target="' ~ item.target ~ '"' : '' }} aria-controls="nav-submenu-{{ key }}-{{ item.ID }}" tabindex="0">

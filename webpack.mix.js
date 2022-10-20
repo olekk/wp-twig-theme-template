@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -12,9 +12,7 @@ let mix = require('laravel-mix');
  */
 mix.options({
   processCssUrls: false,
-  postCss: [
-    require('autoprefixer')
-  ],
+  postCss: [require("autoprefixer")],
   // set uglify to false in order to prevent production minification
   // it prevents mix from pushing UglifyJSPlugin into the webpack config
   uglify: false
@@ -28,22 +26,24 @@ mix.options({
 });
 mix
   .browserSync({
-    proxy: 'localhost',
+    proxy: "localhost",
     files: ["**/*.twig", "**/*.css", "**/*.js"],
     watchEvents: ["change"]
   })
-  .js('resources/js/main.js', 'js/')
-  .sass('resources/styles/main.scss', 'css/')
-  .setPublicPath('dist')
+  .setPublicPath("dist")
+  .react("resources/js/admin/main.js", "js/admin")
+  .react("resources/js/admin/custom-blocks/index.js", "js/admin/blocks.js")
+  .js("resources/js/main.js", "js/")
+  .sass("resources/styles/main.scss", "css/")
   .disableNotifications()
   .webpackConfig({
     externals: {
-        "jquery": "jQuery"
+      jquery: "jQuery"
     }
   })
   .sourceMaps();
-if(mix.inProduction()) {
-  mix.minify('dist/js/main.js');
+if (mix.inProduction()) {
+  mix.minify("dist/js/main.js");
 }
 // Full API
 // mix.js(src, output);
